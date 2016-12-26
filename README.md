@@ -2,7 +2,7 @@
 
 ##The purpose
 
-This is a 7 Segments Clock project, developed from zero, using authoral **hardware and software**. The clock marks hours, minutes and seconds, using an ATMEGA328P microcontroller, from ATMEL. The 7 Segments Clock was developed as a personal project and it was built on an universal soldering breadboard, according with Proteus folder schematics inside this project.
+This is a 7 Segments Clock project, developed from zero, using authoral **hardware and software**. The clock marks **hours, minutes and seconds, using an ATMEGA328P microcontroller**, from ATMEL. The 7 Segments Clock was developed as a personal project and it was built on an **universal soldering breadboard**, according with Proteus folder schematics inside this project.
 
 ##Utility
 
@@ -18,7 +18,7 @@ The clock starts marking time from 00:00, in the moment that it's powered. **To 
 
 In the moment that the circuit is **de-energized**, the clock **loses its reference** and the current time because it does not have a memory hardware implemented in circuit.
 
-However, if you need to store the last marked time, even with the circuit de-energized, you can use a RTC hardware and only read its time variables, than display it in the 7 Segments array. In other way, according to what I said during Binary Clock project (that I developed and its here in github.com/hollwe/binary-clock), I think that this kind of "upgrade" is not interesting to this kind of project because it makes you miss the essence of build a real clock, since thinking in clock logic, counters, timers, until software otimization and implementation.
+However, if you need to store the **last marked time, even with the circuit de-energized, you can use a RTC hardware and only read its time variables, than display it in the 7 Segments array.** In other way, according to what I said during Binary Clock project (here in github.com/hollwe/binary-clock), I think that this kind of "upgrade" is not interesting to this kind of project because it **makes you miss the essence of build a real clock, since thinking in clock logic, counters, timers, until software otimization and implementation.**
 
 *- The .c file contains the developed code in C.* </br>
 *- The .asm file contains the code translated to assembly* </br>
