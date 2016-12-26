@@ -16,7 +16,7 @@ The clock starts marking time from 00:00, in the moment that it's powered. **To 
 
 **The code was developed with the full clock logic, but when I burn it to microcontroller I comment one of markers (seconds, for example - "CalculateSeconds" function) and it marks Hours + Minutes. In the other hand, if I want to see Minutes + Seconds you need to comment "CalculateHours" function and it will display Minutes + Seconds.**
 
-In the moment that the circuit is **de-energized**, the clock **loses its reference** and the actual time because it does not have a memory hardware implemented in circuit.
+In the moment that the circuit is **de-energized**, the clock **loses its reference** and the current time because it does not have a memory hardware implemented in circuit.
 
 However, if you need to store the last marked time, even with the circuit de-energized, you can use a RTC hardware and only read its time variables, than display it in the 7 Segments array. In other way, according to what I said during Binary Clock project (that I developed and its here in github.com/hollwe/binary-clock), I think that this kind of "upgrade" is not interesting to this kind of project because it makes you miss the essence of build a real clock, since thinking in clock logic, counters, timers, until software otimization and implementation.
 
@@ -34,9 +34,9 @@ Below there is an image of the project hardware described in Proteus.
 
 In this project you can see that I used a **7 Segments Display array** (model CAI5461AH), **already multiplexed and easier to be used.**
 
-**However, you can develop the same project using four 7 Segments Displays. 
-The only difference is that you need to multiplex the pins manually and connect a resistor between microcontroller port and display control pins (there is 2 control pins by display).**
-In the other hand, using the 7 Segments Display array it is not necessary to connect the display resistors because they are considered in the array internal circuit.
+**However, you can develop the same project using four 7 Segments Displays.  </br>
+The only difference is that you need to multiplex the pins manually and connect a resistor between microcontroller port and display control pins (there is 2 control pins by display). </br>
+In the other hand, using the 7 Segments Display array it is not necessary to connect the display resistors because they are considered in the array internal circuit.**
 
 Below there is an image of a single 7 Segments Display schematic pins:
 
@@ -48,42 +48,40 @@ Here you can see how to connect the four 7 Segments Display multiplexed:
 
 **Insert Image**
 
-**In the image you can see that it was used transistors to enable each display control pin, but this is not needed.
-I developed the switch system by software. Every time when one display is enabled (5V - common cathode), the microcontroller sends to the other display control pins 0V, assuring that we will have only one display active at a time. **
+In the image you can see that it was used transistors to enable each display control pin, but this is not needed.
+I developed the switch system by software. Every time when one display is enabled (5V - common cathode), the microcontroller sends to the other display control pins 0V, assuring that we will have only one display active at a time. 
 
-And here is an image of the circuit built using four 7 Segments Display, as commented (the code burned for an array or separated displays is exactly the same):
+And here is an image of the circuit built using four 7 Segments Display, as commented (the code burned for an array or separated displays is exactly the same).
 
 **Insert Image**
 
-There is not needed to build your own hardware to see the project working, **if you want to build it on an Arduino UNO board** (or another Arduino board that uses ATMEGA328P), for example, **you need to burn the code to ATMEGA328P via ATMEL Studio** (you can see this link to configure Atmel Studio to burn code for Arduino) and connect the display and buttons directly in Arduino I/O pins.
+There is not needed to build your own hardware to see the project working, **if you want to build it on an Arduino UNO board** (or another Arduino board that uses ATMEGA328P), for example, **you need to burn the code to ATMEGA328P via ATMEL Studio** (you can see this link to configure Atmel Studio to burn code for Arduino) **and connect the display and buttons directly in Arduino I/O pins.**
 
-**Below, I described the hardware connections to make it easy to build the project. Take a look. :) **
+**Below, I described the hardware connections to make it easy to build the project. Take a look. :)**
 
 **7 Segments LEDs:**
 
-__Segment a - ATMEGA328P PD2 - Arduino Uno Digital pin 2__
-__Segment b - ATMEGA328P PD3 - Arduino Uno Digital pin 3__
-__Segment c - ATMEGA328P PD4 - Arduino Uno Digital pin 4__
-__Segment d - ATMEGA328P PD5 - Arduino Uno Digital pin 5__
-__Segment e - ATMEGA328P PD6 - Arduino Uno Digital pin 6__
-__Segment f - ATMEGA328P PD7 - Arduino Uno Digital pin 7__
-__Segment g - ATMEGA328P PB0 - Arduino Uno Digital pin 8__
-__Minutes right display control - ATMEGA328P PB2 - Arduino Uno Digital pin 10__
-__Minutes left display control - ATMEGA328P PB3 - Arduino Uno Digital pin 11__
-__Hours right display control - ATMEGA328P PB4 - Arduino Uno Digital pin 12__
-__Hours left display control - ATMEGA328P PB5 - Arduino Uno Digital pin 13__
+Segment a - ATMEGA328P PD2 - Arduino Uno Digital pin 2 </br>
+Segment b - ATMEGA328P PD3 - Arduino Uno Digital pin 3 </br>
+Segment c - ATMEGA328P PD4 - Arduino Uno Digital pin 4 </br>
+Segment d - ATMEGA328P PD5 - Arduino Uno Digital pin 5 </br>
+Segment e - ATMEGA328P PD6 - Arduino Uno Digital pin 6 </br>
+Segment f - ATMEGA328P PD7 - Arduino Uno Digital pin 7 </br>
+Segment g - ATMEGA328P PB0 - Arduino Uno Digital pin 8 </br>
+Minutes right display control - ATMEGA328P PB2 - Arduino Uno Digital pin 10 </br>
+Minutes left display control - ATMEGA328P PB3 - Arduino Uno Digital pin 11 </br>
+Hours right display control - ATMEGA328P PB4 - Arduino Uno Digital pin 12 </br>
+Hours left display control - ATMEGA328P PB5 - Arduino Uno Digital pin 13 </br>
 
 **Push Buttons:**
 
-__Reset - ATMEGA328P PC6 - Arduino UNO Reset pin__
-__Minutes increment - ATMEGA328P PC1 - Arduino UNO Analog Input 1 (take care: Input pin 1, not Input pin 0)__
-__Hours increment - ATMEGA328P PC2 - Arduino UNO Analog Input 2__
+Reset - ATMEGA328P PC6 - Arduino UNO Reset pin </br>
+Minutes increment - ATMEGA328P PC1 - Arduino UNO Analog Input 1 (take care: Input pin 1, not Input pin 0) </br>
+Hours increment - ATMEGA328P PC2 - Arduino UNO Analog Input 2 </br>
 
-**Obs.1**: If you use four 7 Segments Display all the 7 Segments LEDs are connected together.
-
+**Obs.1**: If you use four 7 Segments Display all the 7 Segments LEDs are connected together. </br>
 **Obs.2**: If you use four 7 Segments Display, every display needs its own input resistor (~~270 ohms --- ~~1k ohms). 
-In addition, the control pins must be connected in its two COM pins.
-
+In addition, the control pins must be connected in its two COM pins. </br>
 **Obs.3**: Be careful with the type of 7 Segments Display you'll be using. 
 There are two different types: Common Anode and Common Cathode. 
 Common Cathode has its control pin ON using HIGH (5V) logical signal. 
@@ -110,18 +108,18 @@ Below, there is an image of the project built using an universal soldering bread
 
 ##Circuit Voltage 
 
-The developed circuit is energized with 5V. 
+The developed circuit is energized with 5V. </br>
 You can adapt a simple 9V battery + 7805 voltage regulator or connect directly an smartphone charger to a P4 jack. 
 
 **How to do it?**
 
-**Step 1:** Take a 5V power source and cut the USB cable (assuming that its does not have a P4 jack), letting only 2 pins available: VCC and GND (the only ones you'll need).
+**Step 1:** Take a 5V power source and cut the USB cable (assuming that its does not have a P4 jack), letting only 2 pins available: VCC and GND (the only ones you'll need). </br>
 **Step 2:** Connect VCC and GND directly into P4 jack. (be careful with the polarity)
 
-Your power suplly is ready. 
+Your power suplly is ready. </br>
 There is below two images of the power supply I used:
 
-**Insert Image**
+**Insert Image** </br>
 **Insert Image**
 
 ##Copyrigths
