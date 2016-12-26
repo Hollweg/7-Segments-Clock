@@ -34,9 +34,9 @@ Below there is an image of the project hardware described in Proteus.
 
 In this project you can see that I used a **7 Segments Display array** (model CAI5461AH), **already multiplexed and easier to be used.**
 
-**However, you can develop the same project using four 7 Segments Displays.  </br>
-The only difference is that you need to multiplex the pins manually and connect a resistor between microcontroller port and display control pins (there is 2 control pins by display). </br>
-In the other hand, using the 7 Segments Display array it is not necessary to connect the display resistors because they are considered in the array internal circuit.**
+However, you can develop the same project **using four 7 Segments Displays.**  </br>
+The only difference is that **you need to multiplex the pins manually and connect a resistor between microcontroller port and display control pins** (there is 2 control pins by display). </br>
+**In the other hand, using the 7 Segments Display array it is not necessary to connect the display resistors because they are considered in the array internal circuit.**
 
 Below there is an image of a single 7 Segments Display schematic pins:
 
@@ -48,8 +48,8 @@ Here you can see how to connect the four 7 Segments Display multiplexed:
 
 **Insert Image**
 
-In the image you can see that it was used transistors to enable each display control pin, but this is not needed.
-I developed the switch system by software. Every time when one display is enabled (5V - common cathode), the microcontroller sends to the other display control pins 0V, assuring that we will have only one display active at a time. 
+**In the image you can see that it was used transistors to enable each display control pin, but this is not needed.**
+I developed the **switch system by software.** Every time when a display is enabled (5V - common cathode), the microcontroller sends to the other display control pins 0V, assuring that we will have only one display active at a time. 
 
 And here is an image of the circuit built using four 7 Segments Display, as commented (the code burned for an array or separated displays is exactly the same).
 
