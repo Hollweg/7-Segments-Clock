@@ -4,7 +4,7 @@
 
 This is a 7 Segments Clock project, developed from zero, using authoral **hardware and software**. The clock marks **hours, minutes and seconds, using an ATMEGA328P microcontroller**, from ATMEL. The 7 Segments Clock was developed as a personal project and it was built on an **universal soldering breadboard**, according with Proteus folder schematics inside this project. During this README I'll explain how to develop your own 7 Segments Clock. :)
 
-Here is an image about the project final result:
+**Here is an image about the project final result:**
 
 ![Imgur](http://i.imgur.com/BjCu3v1.jpg) 
 
@@ -30,7 +30,7 @@ However, if you need to store the **last marked time, even with the circuit de-e
 *- The other files are configuration files, created by compiler.* </br>
 *- Inside /Proteus folder it is the project hardware schematic* </br>
 
-Below there is an image of the project hardware described in Proteus (using four 7 Segments Display). 
+**Below there is an image of the project hardware described in Proteus (using four 7 Segments Display). **
 
 ![Imgur](http://i.imgur.com/T5LGVun.png)
 
@@ -45,20 +45,20 @@ Before use the 7 Segments Array I tested the circuit and the code in a breadboar
 The only difference is that **you need to multiplex the pins manually and connect a resistor between microcontroller port and display control pins** (there is 2 control pins (shared) by display). </br>
 **In the other hand, using the 7 Segments Display array it is not necessary to connect the display resistors because they are considered in its internal circuit.**
 
-Below there is an image of a single 7 Segments Display schematic pins:
+**Below there is an image of a single 7 Segments Display schematic pins:**
 
 ![Imgur](http://i.imgur.com/6OF4lW5.gif)
 
 ![Imgur](http://i.imgur.com/uOHj8T3.gif)
 
-Here you can see four 7 Segments Display multiplexed .gif:
+**Here you can see four 7 Segments Display multiplexed .gif:**
 
 [Imgur](http://i.imgur.com/3Io3QAH.gifv)
 
 **In the image you can see that it was used transistors to enable each display control pin, but this is not needed.** </br>
 I developed the **switch system by software.** Every time when a display is enabled (5V - common cathode), the microcontroller sends to the other display control pins 0V, assuring that we will have only one display active at a time. 
 
-And here is an image of the circuit built using four 7 Segments Display, as commented (the code burned for an array or separated displays is exactly the same).
+**And here is an image of the circuit built using four 7 Segments Display, as commented (the code burned for an array or separated displays is exactly the same).**
 
 ![Imgur](http://i.imgur.com/Zn7HhOp.jpg)
 
@@ -119,12 +119,13 @@ You can adapt a simple 9V battery + 7805 voltage regulator or connect directly a
 **Step 1:** Take a 5V power source and cut the USB cable (assuming that its does not have a P4 jack), letting only 2 pins available: VCC and GND (the only ones you'll need). </br>
 **Step 2:** Connect VCC and GND directly into P4 jack. (be careful with the polarity)
 
-Your power suplly is ready. </br>
-There is below an image of the power supply I used:
+Your power suplly is ready! :) </br>
+
+**There is below an image of the power supply I used:**
 
 ![Imgur](http://i.imgur.com/477PfSB.jpg) </br>
 
-Finally, there is an image of the circuit working very well:
+**Finally, there is an image of the circuit working very well:**
 
 ![Imgur](http://i.imgur.com/myghT7r.jpg)
 
