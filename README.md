@@ -2,7 +2,11 @@
 
 ##The purpose
 
-This is a 7 Segments Clock project, developed from zero, using authoral **hardware and software**. The clock marks **hours, minutes and seconds, using an ATMEGA328P microcontroller**, from ATMEL. The 7 Segments Clock was developed as a personal project and it was built on an **universal soldering breadboard**, according with Proteus folder schematics inside this project.
+This is a 7 Segments Clock project, developed from zero, using authoral **hardware and software**. The clock marks **hours, minutes and seconds, using an ATMEGA328P microcontroller**, from ATMEL. The 7 Segments Clock was developed as a personal project and it was built on an **universal soldering breadboard**, according with Proteus folder schematics inside this project. During this README I'll explain how to develop your own 7 Segments Clock. :)
+
+Here is an image about the project final result:
+
+![Imgur](http://i.imgur.com/BjCu3v1.jpg) 
 
 ##Utility
 
@@ -26,36 +30,39 @@ However, if you need to store the **last marked time, even with the circuit de-e
 *- The other files are configuration files, created by compiler.* </br>
 *- Inside /Proteus folder it is the project hardware schematic* </br>
 
-Below there is an image of the project hardware described in Proteus. 
+Below there is an image of the project hardware described in Proteus (using four 7 Segments Display). 
 
-**Insert image**
+![Imgur](http://i.imgur.com/T5LGVun.png)
+
+You can acess the hardware files in the project folder /Proteus.
 
 ##Using four 7-Segments Displays
 
-In this project you can see that I used a **7 Segments Display array** (model CAI5461AH), **already multiplexed and easier to be used.**
+You can see in the final result project image that I used a **7 Segments Display array** (model CAI5461AH), **already multiplexed and easier to be used.**
 
 However, you can develop the same project **using four 7 Segments Displays.**  </br>
-The only difference is that **you need to multiplex the pins manually and connect a resistor between microcontroller port and display control pins** (there is 2 control pins by display). </br>
-**In the other hand, using the 7 Segments Display array it is not necessary to connect the display resistors because they are considered in the array internal circuit.**
+Before use the 7 Segments Array I tested the circuit and the code in a breadboard with four 7 Segments Displays. </br>
+The only difference is that **you need to multiplex the pins manually and connect a resistor between microcontroller port and display control pins** (there is 2 control pins (shared) by display). </br>
+**In the other hand, using the 7 Segments Display array it is not necessary to connect the display resistors because they are considered in its internal circuit.**
 
 Below there is an image of a single 7 Segments Display schematic pins:
 
-**Insert Image**
+![Imgur](http://i.imgur.com/6OF4lW5.gif)
 
-**Insert Image**
+![Imgur](http://i.imgur.com/uOHj8T3.gif)
 
 Here you can see how to connect the four 7 Segments Display multiplexed:
 
-**Insert Image**
+![Imgur](http://i.imgur.com/3Io3QAH.gifv)
 
 **In the image you can see that it was used transistors to enable each display control pin, but this is not needed.**
 I developed the **switch system by software.** Every time when a display is enabled (5V - common cathode), the microcontroller sends to the other display control pins 0V, assuring that we will have only one display active at a time. 
 
 And here is an image of the circuit built using four 7 Segments Display, as commented (the code burned for an array or separated displays is exactly the same).
 
-**Insert Image**
+![Imgur](http://i.imgur.com/Zn7HhOp.jpg)
 
-There is not needed to build your own hardware to see the project working, **if you want to build it on an Arduino UNO board** (or another Arduino board that uses ATMEGA328P), for example, **you need to burn the code to ATMEGA328P via ATMEL Studio** (you can see this link to configure Atmel Studio to burn code for Arduino) **and connect the display and buttons directly in Arduino I/O pins.**
+There is not need to build your own hardware to see the project working, **if you want to build it on an Arduino UNO board** (or another Arduino board that uses ATMEGA328P), **you need to burn the code to ATMEGA328P via ATMEL Studio** (you can see <a href="https://www.embarcados.com.br/atmel-studio/">this link</a> to configure Atmel Studio to burn code for Arduino) **and connect the display and buttons directly in Arduino I/O pins.**
 
 **Below, I described the hardware connections to make it easy to build the project. Take a look. :)**
 
@@ -80,12 +87,12 @@ Minutes increment - ATMEGA328P PC1 - Arduino UNO Analog Input 1 (take care: Inpu
 Hours increment - ATMEGA328P PC2 - Arduino UNO Analog Input 2 </br>
 
 **Obs.1**: If you use four 7 Segments Display all the 7 Segments LEDs are connected together. </br>
-**Obs.2**: If you use four 7 Segments Display, every display needs its own input resistor (~~270 ohms --- ~~1k ohms). 
+**Obs.2**: If you use four 7 Segments Display, every display needs its own input resistor (~~270 ohms --- ~~1k ohms). </br>
 In addition, the control pins must be connected in its two COM pins. </br>
-**Obs.3**: Be careful with the type of 7 Segments Display you'll be using. 
-There are two different types: Common Anode and Common Cathode. 
-Common Cathode has its control pin ON using HIGH (5V) logical signal. 
-Common Anode has its control pin ON using LOW (0V) logical signal.
+**Obs.3**: Be careful with the type of 7 Segments Display you'll be using. </br>
+There are two different types: Common Anode and Common Cathode. </br>
+Common Cathode has its control pin ON using HIGH (5V) logical signal. </br> 
+Common Anode has its control pin ON using LOW (0V) logical signal. </br>
 
 ##Which was used in project?
 
@@ -94,17 +101,13 @@ Common Anode has its control pin ON using LOW (0V) logical signal.
 1. 1 x ATMEGA328P microcontroller <br>
 2. 1 x 28 pins header</br>
 3. 3 x Push button </br>
-4. 3 x Resistor 1k ohm </br>
+4. 3 x Resistor 1k ohm (+4 if you use four 7 Segments Display) </br>
 5. 1 x 16MHz Crystal  </br>
 6. 2 x 22pF Capacitors </br>
 7. 1 x 100nF Capacitors </br>
 8. 1 x 7 Segments Display Array </br>
 9. 1 x Female P4 Jack </br>
 10. 1 x 10x5cm Universal Soldering Board </br>
-
-Below, there is an image of the project built using an universal soldering breadboard.
-
-**Insert Image**
 
 ##Circuit Voltage 
 
@@ -119,8 +122,12 @@ You can adapt a simple 9V battery + 7805 voltage regulator or connect directly a
 Your power suplly is ready. </br>
 There is below two images of the power supply I used:
 
-**Insert Image** </br>
-**Insert Image**
+![Imgur](http://i.imgur.com/477PfSB.jpg) </br>
+![Imgur](http://i.imgur.com/myghT7r.jpg)
+
+Finally, there is an image of the project working:
+
+![Imgur](http://i.imgur.com/myghT7r.jpg)
 
 ##Copyrigths
 
