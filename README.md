@@ -140,12 +140,3 @@ Enjoy!
 
 **Hollweg**
 
-<<<<<<< HEAD
-In development :)  
-
-
-
-
-
-=======
->>>>>>> v2
