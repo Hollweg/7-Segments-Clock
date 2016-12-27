@@ -55,14 +55,15 @@ The only difference is that **you need to multiplex the pins manually and connec
 
 [Imgur](http://i.imgur.com/3Io3QAH.gifv)
 
-**In the image you can see that it was used transistors to enable each display control pin, but this is not needed.** </br>
-I developed the **switch system by software.** Every time when a display is enabled (5V - common cathode), the microcontroller sends to the other display control pins 0V, assuring that we will have only one display active at a time. 
+**In the image you can see that it was used transistors to enable each display control pin, but this is not necessary.** </br>
+I developed the **control switch system by software.** Every time when a display is enabled (5V - common cathode), the microcontroller sends to the other display control pins 0V, assuring that we will have only one display active at a time. </br>
+This control signal is enable for a short period of time, very fast, then it enables another, sharing the bus time between all 4 digits. So, as the signal varies a lot of times per second, our eyes have the impression that all 4 digits are ON simultaneously, what is fake. 
 
-*And here is an image of the circuit built using four 7 Segments Display, as commented (the code burned for an array or separated displays is exactly the same):*
+*Here is an image of the circuit using four 7 Segments Display (the code burned for an array or separated displays is exactly the same):*
 
 ![Imgur](http://i.imgur.com/Zn7HhOp.jpg)
 
-There is not necessary to build your own hardware to see the project working, **if you want to build it on an Arduino UNO board** (or another Arduino board that uses ATMEGA328P), **you need to burn the code to ATMEGA328P via ATMEL Studio** (you can see <a href="https://www.embarcados.com.br/atmel-studio/">this link</a> to configure Atmel Studio to burn code for Arduino) **and connect the display and buttons directly in Arduino I/O pins.**
+There is not necessary to build your own hardware to see the project working. **If you want to build it on an Arduino UNO board** (or another Arduino board that uses ATMEGA328P) **you need to burn the code to ATMEGA328P via ATMEL Studio** (you can see <a href="https://www.embarcados.com.br/atmel-studio/">this link</a> to configure Atmel Studio to burn code for Arduino) **and connect the display and buttons directly in Arduino I/O board pins.**
 
 **Below, I described the hardware connections to make it easy to build the project. Take a look. :)**
 
@@ -96,7 +97,7 @@ Common Anode has its control pin ON using LOW (0V) logical signal. </br>
 
 ##Which was used in project?
 
-**List of materials**:
+**Bill of materials**:
 
 1. 1 x ATMEGA328P microcontroller <br>
 2. 1 x 28 pins header</br>
@@ -112,12 +113,12 @@ Common Anode has its control pin ON using LOW (0V) logical signal. </br>
 ##Circuit Voltage 
 
 The developed circuit is energized with 5V. </br>
-You can adapt a simple 9V battery + 7805 voltage regulator or connect directly an smartphone charger to a P4 jack. 
+You can adapt a simple 9V battery + 7805 voltage regulator or connect it directly on smartphone charger using a P4 jack. 
 
 **How to do it?**
 
-**Step 1:** Take a 5V power source and cut the USB cable (assuming that its does not have a P4 jack), letting only 2 pins available: VCC and GND (the only ones you'll need). </br>
-**Step 2:** Connect VCC and GND directly into P4 jack. (be careful with the polarity)
+**Step 1:** Take a 5V power source and cut the USB cable (assuming that its does not have a P4 jack), letting only these 2 pins available: VCC and GND (the only ones you'll need). </br>
+**Step 2:** Connect VCC and GND directly into P4 jack (be careful with the polarity).
 
 Your power suplly is ready! :) </br>
 
