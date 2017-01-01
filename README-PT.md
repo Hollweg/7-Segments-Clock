@@ -2,10 +2,11 @@
 
 ##A Proposta
 
-Esse é um projeto de um display de 7 segmentos, desenvolvido do zero, usando hardware e software autorais. :) </br>
+Esse é um projeto de um display de 7 segmentos, desenvolvido do zero, usando hardware e software autorais. </br>
 O relógio marca **horas, minutos e segundos, usando um microcontrolador ATMEGA328P**, desenvolvido pela ATMEL. </br>
 O 7 Segments Clock foi desenvolvido como um projeto pessoal e foi construído em uma placa universal, de acordo com os esquemas da pasta Proteus, dentro deste projeto. </br>
-Durante este README vou explicar como desenvolver o seu próprio Relógio de 7 segmentos. :)
+
+Durante este README vou explicar como desenvolver o seu próprio Relógio de 7 segmentos. :D
 	
 *Aqui está uma imagem sobre o resultado final do projeto:*
 
