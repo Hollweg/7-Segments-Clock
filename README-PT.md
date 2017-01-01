@@ -1,4 +1,4 @@
-#7-Segments-Clock
+#Relógio de 7 Segmentos
 
 ##A Proposta
 
@@ -13,7 +13,7 @@ Durante este README vou explicar como desenvolver o seu próprio Relógio de 7 s
 
 ##Utilidade
 
-O código foi desenvolvido especificamente para o microcontrolador ATMEGA328P, usando a IDE ATMEL Studio. No entanto, **se algumas alterações forem feitas, principalmente na inicialização, configuração e alguns registradores, o projeto pode ser adaptado para outras famílias de microcontroladores, de outros fabricantes** e IDEs. A ideia de construir um Relógio 7 Segmentos é a mesma, mas algumas coisas vão mudar, como registradores, timer, I/Os e ADCs.
+O código foi desenvolvido especificamente para o microcontrolador ATMEGA328P, usando a IDE ATMEL Studio. No entanto, **se algumas alterações forem feitas, principalmente na inicialização, configuração e alguns registradores, o projeto pode ser adaptado para outras famílias de microcontroladores, de outros fabricantes** e IDEs. A ideia de construir um Relógio de 7 Segmentos é a mesma, mas algumas coisas vão mudar, como registradores, timer, I/Os e ADCs.
 
 ##Como funciona?
 
