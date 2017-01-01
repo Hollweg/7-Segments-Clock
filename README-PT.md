@@ -71,7 +71,7 @@ Esse sinal de controle é habilitado por um curto período de tempo, muito rápi
 ![Imgur](http://i.imgur.com/Zn7HhOp.jpg)
 
 Não é necessário montar o hardware em uma plaquinha para ver seu projeto funcionando. </br>
-**Se você quer fazer o projeto rodar usando uma placa do Arduino UNO** (ou alguma outra placa da Arduino que use o microcontrolador ATMEGA328P) **você precisa gravaro código no ATMEGA328P via ATMEL Studio** (você pode ver <a href="https://www.embarcados.com.br/atmel-studio/">nesse link aqui</a> como configurar o Atmel Studio para gravar os códigos em plataformas Arduino) **e conectar o display e os botões diretamente nas I/Os da placa do Arduino.**
+**Se você quer fazer o projeto rodar usando uma placa do Arduino UNO** (ou alguma outra placa da Arduino que use o microcontrolador ATMEGA328P) **você precisa gravar o código no ATMEGA328P via ATMEL Studio** (você pode ver <a href="https://www.embarcados.com.br/atmel-studio/">nesse link aqui</a> como configurar o Atmel Studio para gravar os códigos em plataformas Arduino) **e conectar o display e os botões diretamente nas I/Os da placa do Arduino.**
 	
 **Abaixo, eu descrevi as conexões de hardware para facilitar a construlão do projeto. Dê uma olhada :)**
 
