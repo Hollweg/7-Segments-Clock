@@ -3,8 +3,9 @@
 ##A Proposta
 
 Esse é um projeto de um display de 7 segmentos, desenvolvido do zero, usando hardware e software autorais. :) </br>
-O relógio marca **horas, minutos e segundos, usando um microcontrolador ATMEGA328P, desenvolvido pela ATMEL. </br>
-O 7 Segments Clock foi desenvolvido como um projeto pessoal e foi construído em uma placa universal, de acordo com os esquemas da pasta Proteus, dentro deste projeto. Durante este README vou explicar como desenvolver o seu próprio Relógio de 7 segmentos. :)
+O relógio marca **horas, minutos e segundos, usando um microcontrolador ATMEGA328P**, desenvolvido pela ATMEL. </br>
+O 7 Segments Clock foi desenvolvido como um projeto pessoal e foi construído em uma placa universal, de acordo com os esquemas da pasta Proteus, dentro deste projeto. </br>
+Durante este README vou explicar como desenvolver o seu próprio Relógio de 7 segmentos. :)
 	
 *Aqui está uma imagem sobre o resultado final do projeto:*
 
@@ -12,7 +13,7 @@ O 7 Segments Clock foi desenvolvido como um projeto pessoal e foi construído em
 
 ##Utilidade
 
-O código foi desenvolvido especificamente para o microcontrolador ATMEGA328P, usando a IDE ATMEL Studio. No entanto, se algumas alterações forem feitas, principalmente na inicialização, configuração e alguns registradores, o projeto pode ser adaptado para outras famílias de microcontroladores, de outros fabricantes** e IDEs. A ideia de construir um Relógio 7 Segmentos é a mesma, mas algumas coisas vão mudar, como registradores, timer, I/Os e ADCs.
+O código foi desenvolvido especificamente para o microcontrolador ATMEGA328P, usando a IDE ATMEL Studio. No entanto, **se algumas alterações forem feitas, principalmente na inicialização, configuração e alguns registradores, o projeto pode ser adaptado para outras famílias de microcontroladores, de outros fabricantes** e IDEs. A ideia de construir um Relógio 7 Segmentos é a mesma, mas algumas coisas vão mudar, como registradores, timer, I/Os e ADCs.
 
 ##Como funciona?
 
@@ -24,7 +25,7 @@ O relógio começa a marcar o tempo a partir das 00:00, no momento em que está 
 
 No momento em que o circuito é **desenergizado**, o relógio **perde sua referência** e o tempo atual porque ele não tem um hardware de memória implementado no circuito.
 
-No entanto, se você precisar armazenar o **último tempo marcado, mesmo com o circuito desenergizado, você pode usar um hardware RTC e só ler suas variáveis ​​de tempo, e exibí-los no display de 7 Segmentos**. De outra forma, de acordo com o que eu disse durante o projeto Binary Clock (aqui em github.com/hollweg/binary-clock), eu acho que esse tipo de "upgrade" não é interessante para este tipo de projeto, justamente porque faz **você perder o essência de construir um relógio real, pensar na lógica do relógio, contadores, temporizadores, até otimização de software e implementação.**
+No entanto, se você precisar armazenar o **último tempo marcado, mesmo com o circuito desenergizado, você pode usar um hardware RTC e ler suas variáveis de tempo, exibindo-os no display de 7 Segmentos**. De qualquer forma, de acordo com o que eu disse durante o desenvolvimento do projeto Binary Clock (disponível aqui em <a href="https://www.github.com/hollweg/binary-clock">github.com/hollweg/binary-clock</a>), eu acho que esse "upgrade" não é interessante para este tipo de projeto, justamente porque se faz **perder o desafio de desenvolver sua própria rotina, seu próprio hardware, a essência de construir um relógio real, pensar na lógica, contadores, temporizadores, até otimização de software e implementação.**
 
 Tipos de arquivos encontrados no projeto:
 
@@ -40,13 +41,12 @@ Tipos de arquivos encontrados no projeto:
 
 Você pode acessar os arquivos de hardware na pasta /Proteus.
 
-##Usando 4 displays de 7 Segmentos
+##Usando 4 Displays de 7 Segmentos
 
 Você pode ver no resultado final do projeto que foi usado um **array de 7 Segmentos** (modelo CAI5461AH), **já multiplexado e fácil de ser usado.**
 
 No entanto, você pode usar o mesmo código **através de 4 Displays de 7 Segmentos.** </br>
-Antes de usar o Array de 7 Segmentos, hardware e software foram testados em uma protobard com quatro displays de 7 segmentos. </br>
-A única diferença é que **você precisa multiplexar os pinos manualmente e conectar um resistor entre a porta do microcontrolador e o pino de controle em cada display** (há 2 pinos de controle (compartilhados) por display). </br>
+Antes de usar o Array de 7 Segmentos, hardware e software foram testados em uma protobard com quatro displays de 7 segmentos. A única diferença é que **você precisa multiplexar os pinos manualmente e conectar um resistor entre a porta do microcontrolador e o pino de controle em cada display** (há 2 pinos de controle (compartilhados) por display). </br>
 **Por outro lado, usando o array não é necessário conectar os resistores porque eles já são considerados no circuito do array.**
 
 *Abaixo, está uma imagem do esquemático de um único display de 7 Segmentos:*
@@ -59,11 +59,14 @@ A única diferença é que **você precisa multiplexar os pinos manualmente e co
 
 [Imgur](http://i.imgur.com/3Io3QAH.gifv)
 
-**Na imagem se pode notar que foram usados transistores para habilitar cada pino de controle do display, mas isso não é necessário.** </br>
-Eu desenvolvi o **sistema de chaveamento do controle de displays por software.** Cada vez que um display é habilitado (5V - catodo comum), o microcontrolador manda para os outros sinais de controle dos displays 0V, garantindo que nós teremos apenas um display ativo a cada momento. </br>
+**Na imagem se pode notar que foram usados transistores para habilitar cada pino de controle do display, mas isso não é necessário.**
+
+Eu desenvolvi o **sistema de chaveamento do controle de displays por software.** </br>
+Cada vez que um display é habilitado (5V - catodo comum), o microcontrolador manda para os outros sinais de controle dos displays 0V, garantindo que nós teremos apenas um display ativo a cada momento.
+
 Esse sinal de controle é habilitado por um curto período de tempo, muito rápido, então habilita-se outro display, compartilhando o barramento entre os 4 displays de 7 segmentos. Então, como os displays são habilitados centenas de vezes por segundo, nossos olhos tem a impressão que todos os 4 displays estão ativos simultaneamente, o que não é verdade.
 
-*Aqui está uma imagem do circuito usando quatro Displays de 7 Segmentos (o código usando para o array e para os displays separados é exatamente o mesmo):**
+*Aqui está uma imagem do circuito usando quatro Displays de 7 Segmentos (o código usando para o array e para os displays separados é exatamente o mesmo):*
 
 ![Imgur](http://i.imgur.com/Zn7HhOp.jpg)
 
