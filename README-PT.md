@@ -1,6 +1,6 @@
-#7-Segments-Clock
+# 7-Segments-Clock
 
-##A Proposta
+## A Proposta
 
 Esse é um projeto de um display de 7 segmentos, desenvolvido do zero, usando hardware e software autorais. </br>
 O relógio marca **horas, minutos e segundos, usando um microcontrolador ATMEGA328P**, desenvolvido pela ATMEL. </br>
@@ -12,11 +12,11 @@ Durante este README vou explicar como desenvolver o seu próprio Relógio de 7 s
 
 ![Imgur](http://i.imgur.com/BjCu3v1.jpg) 
 
-##Utilidade
+## Utilidade
 
 O código foi desenvolvido especificamente para o microcontrolador ATMEGA328P, usando a IDE ATMEL Studio. No entanto, **se algumas alterações forem feitas, principalmente na inicialização, configuração e alguns registradores, o projeto pode ser adaptado para outras famílias de microcontroladores, de outros fabricantes** e IDEs. A ideia de construir um Relógio 7 Segmentos é a mesma, mas algumas coisas vão mudar, como registradores, timer, I/Os e ADCs.
 
-##Como funciona?
+## Como funciona?
 
 O relógio começa a marcar o tempo a partir das 00:00, no momento em que está ligado. **Para ajustar o tempo até a hora e o minuto desejados, é necessário usar os push buttons do circuito (no lado direito do microcontrolador)**. Temos dois botões, um para incrementar horas e outro para incrementar minutos.
 
@@ -42,7 +42,7 @@ Tipos de arquivos encontrados no projeto:
 
 Você pode acessar os arquivos de hardware na pasta /Proteus.
 
-##Usando 4 Displays de 7 Segmentos
+## Usando 4 Displays de 7 Segmentos
 
 Você pode ver no resultado final do projeto que foi usado um **array de 7 Segmentos** (modelo CAI5461AH), **já multiplexado e fácil de ser usado.**
 
@@ -104,7 +104,7 @@ Existem dois tipos diferentes: Anodo Comum e Catodo Comum </br>
 Catodo Comum tem seus pinos de controle ON usando nível lógico alto (5V). </br>
 Anodo Comum tem seus pinos de controle ON usando nível lógico baixo (0V). </br>
 
-##O que foi usado neste projeto?
+## O que foi usado neste projeto?
 
 **Lista de materiais**:
 
@@ -119,7 +119,7 @@ Anodo Comum tem seus pinos de controle ON usando nível lógico baixo (0V). </br
 9. 1 x Jack P4 fêmea </br>
 10. 1 x Placa universal 10x5cm </br>
 
-##Tensão de alimentação do circuito
+## Tensão de alimentação do circuito
 
 O circuito desenvolvido é energizado com 5V. </br>
 Você pode adaptar uma simples bateria de 9V + regulador de tensão 7805, ou então conectá-lo diretamente a uma fonte de alimentação de um smartphone, com um jack P4.
@@ -139,7 +139,7 @@ Sua fonte de alimentação está pronta! :) </br>
 
 ![Imgur](http://i.imgur.com/myghT7r.jpg)
 
-##Copyrigths
+## Copyrigths
 
 **O projeto pode ser reproduzido sem problemas.** </br>
 No entanto, eu somente peço que **mantenha os créditos ao autor.** :)
