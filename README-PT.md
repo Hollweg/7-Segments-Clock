@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-#Relógio de 7 Segmentos
-=======
+
 # 7-Segments-Clock
->>>>>>> v2
 
 ## A Proposta
 
