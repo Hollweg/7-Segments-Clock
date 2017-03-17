@@ -1,6 +1,6 @@
-#7-Segments-Clock
-
-##The purpose
+# 7-Segments-Clock
+ 
+## The purpose
 
 This is a 7 Segments Clock project, developed from zero, using authoral **hardware and software**. The clock marks **hours, minutes and seconds, using an ATMEGA328P microcontroller**, from ATMEL. The 7 Segments Clock was developed as a personal project and it was built on an **universal soldering breadboard**, according with Proteus folder schematics inside this project. During this README I'll explain how to develop your own 7 Segments Clock. :)
 
@@ -8,11 +8,11 @@ This is a 7 Segments Clock project, developed from zero, using authoral **hardwa
 
 ![Imgur](http://i.imgur.com/BjCu3v1.jpg) 
 
-##Utility
+## Utility
 
 The code was developed specifically to **ATMEGA328P microcontroller** using **ATMEL Studio IDE**. However, if some changes were made, mainly in initialization, configuration and some registers, **the project can be adapted to other microcontroller families, from other manufacturers** and IDEs. The idea to build a 7 Segments Clock is the same, but some things will change, like timer registers, I/O and ADC configurations.
 
-##How it works?
+## How it works?
 
 The clock starts marking time from 00:00, in the moment that it's powered. **To adjust time until desired hour and minute you have to use the circuit push buttons** (in the right side of microcontroller). We have two push buttons, one to increment hours and another one to increment minutes. 
 
@@ -36,7 +36,7 @@ However, if you need to store the **last marked time, even with the circuit de-e
 
 You can acess the hardware files in the project folder /Proteus.
 
-##Using four 7-Segments Displays
+## Using four 7-Segments Displays
 
 You can see in the final result project image that I used a **7 Segments Display array** (model CAI5461AH), **already multiplexed and easier to be used.**
 
@@ -95,7 +95,7 @@ There are two different types: Common Anode and Common Cathode. </br>
 Common Cathode has its control pin ON using HIGH (5V) logical signal. </br> 
 Common Anode has its control pin ON using LOW (0V) logical signal. </br>
 
-##Which was used in project?
+## Which was used in project?
 
 **Bill of materials**:
 
@@ -110,7 +110,7 @@ Common Anode has its control pin ON using LOW (0V) logical signal. </br>
 9. 1 x Female P4 Jack </br>
 10. 1 x 10x5cm Universal Soldering Board </br>
 
-##Circuit Voltage 
+## Circuit Voltage 
 
 The developed circuit is energized with 5V. </br>
 You can adapt a simple 9V battery + 7805 voltage regulator or connect it directly on smartphone charger using a P4 jack. 
@@ -130,7 +130,7 @@ Your power suplly is ready! :) </br>
 
 ![Imgur](http://i.imgur.com/myghT7r.jpg)
 
-##Copyrigths
+## Copyrigths
 
 **The project can be reproduced without any problems.** </br>
 However, I only ask you to **keep author credits.** :)
